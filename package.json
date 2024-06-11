@@ -4,6 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "generate": "npx prisma generate",
+    "postinstall": "prisma generate",
+    "start": "node index.js",
+    "deploy": "npx prisma migrate deploy",
+    "build": "npm run generate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
