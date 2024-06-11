@@ -3,6 +3,10 @@ const { discountBtnClickQuery } = require("../services/checkout-ui");
 exports.discountBtnClick = async (req, res) => {
     try {
         const { uniqueId } = req?.body;
+
+        if (uniqueId !== process.env.EVENT_AUTH) {
+            return res.status(401).send({ success: false, message: "UnAuthorized!" })
+        }
         const payload = {
             uniqueId
         }
